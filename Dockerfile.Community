@@ -1,5 +1,9 @@
 # https://hub.docker.com/r/chatwoot/chatwoot/tags
-FROM chatwoot/chatwoot:latest-ce
+FROM anarallc/chatwoot:latest
+
+# Add environment variables for CORS configuration
+ENV CW_CORS_ALLOWED_ORIGINS='*'
+ENV CW_ENABLE_API_ACCESS=true
 
 RUN apk add --no-cache multirun postgresql-client
 
