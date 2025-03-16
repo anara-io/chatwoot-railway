@@ -2,8 +2,8 @@
 FROM anarallc/chatwoot:latest
 
 # Add environment variables for CORS configuration
-ENV CW_CORS_ALLOWED_ORIGINS='*'
-ENV CW_ENABLE_API_ACCESS=true
+ARG CW_CORS_ALLOWED_ORIGINS='*'
+ARG CW_ENABLE_API_ACCESS=true
 
 RUN apk add --no-cache multirun postgresql-client
 
