@@ -1,6 +1,7 @@
-# FROM ghcr.io/railwayapp-templates/chatwoot:Community
-# https://hub.docker.com/r/chatwoot/chatwoot/tags
-FROM anarallc/chatwoot:latest
+FROM chatwoot/chatwoot:latest-ce
+
+# Copy our modified CORS configuration
+COPY config/initializers/cors.rb /app/config/initializers/cors.rb
 
 # Add environment variables for CORS configuration
 ARG CW_CORS_ALLOWED_ORIGINS='*'
